@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtpt0ajwavcgq"
-path="res://.godot/imported/cathy and mysteryman.png-61b84a6254e0200f08c27f44ea42e21f.ctex"
+uid="uid://bqsxpahro5qrq"
+path="res://.godot/imported/house1.png-b3eee0ed081b076f398d850d05f60b19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cathy and mysteryman.png"
-dest_files=["res://.godot/imported/cathy and mysteryman.png-61b84a6254e0200f08c27f44ea42e21f.ctex"]
+source_file="res://assets/house1.png"
+dest_files=["res://.godot/imported/house1.png-b3eee0ed081b076f398d850d05f60b19.ctex"]
 
 [params]
 

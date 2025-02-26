@@ -1,0 +1,317 @@
+[gd_scene load_steps=12 format=3 uid="uid://l04rkdgdqb6g"]
+
+[ext_resource type="PackedScene" uid="uid://ku7l7i7etfhk" path="res://player.tscn" id="1_0gph3"]
+[ext_resource type="PackedScene" uid="uid://dm7qonw15p4s7" path="res://scenes/Dining_talk.tscn" id="1_ylu1l"]
+[ext_resource type="Texture2D" uid="uid://bw6pyhyfhablu" path="res://assets/house.png" id="2_bfydw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5k5w"]
+texture = ExtResource("2_bfydw")
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6, 8, -6, 8, -8, -8, -8)
+0:0/1 = 1
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/next_alternative_id = 3
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+7:0/0/custom_data_0 = true
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -1, 5, -1, 5, 6, -5, 6)
+6:1/0 = 0
+7:1/next_alternative_id = 3
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4, 8, 8, -8, 8)
+7:1/0/custom_data_0 = true
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -1, 5, -1, 5, 6, -5, 6, -5, -1)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -8, -8, -8, -8, -8, -8, -8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -8, -8, -8, -8, -8, -8, -8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 8, -4, 4, 0, -4, 4, -8, 8, -8, 8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 0, -4, 4, 4, 4, 4, 4, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
+1:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 8, -4, 4, -4, -4, -4, -8, 8, -8, 8, 4, 4, 4)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 4, -8, 4, -8, -8, 4, -8, 4, 0, 4, 8)
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -1, 5, -1, 5, 6, -5, 6)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.25, 8, 1.75, 1.875, 8, -0.5, 8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.5, -3.625, 1.125, -0.875, 4.625, -0.375, 8, -8, 8)
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 4, -8, 4, 4, -4, 8, -8, -8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 4, -8, 4)
+
+[sub_resource type="TileSet" id="TileSet_jid5o"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Open "
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_x5k5w")
+
+[sub_resource type="GDScript" id="GDScript_g67nt"]
+script/source = "extends Node2D
+
+# TileMap node reference
+@export var tilemap: TileMap
+
+# Tile IDs or Atlas Coordinates for closed and open door tiles
+@export var closed_door_tiles: Array[Vector2i] = [Vector2i(7, 0), Vector2i(7, 1)]
+@export var open_door_tiles: Array[Vector2i] = [Vector2i(6, 0), Vector2i(6, 1)]
+
+# Track if the player is near the door
+var player_near_door: bool = false
+
+#func _ready():
+	# Initialize the door as closed
+	#for tile_pos in closed_door_tiles:
+		#tilemap.set_cell(0, tile_pos, 0, closed_door_tiles[0])  # Use the first closed tile ID
+
+func _input(event):
+	if player_near_door and event.is_action_pressed(\"interact\"):  # Replace \"ui_interact\" with your input action
+		open_door()
+
+func open_door():
+	# Change the tiles to the open door
+	for i in range(closed_door_tiles.size()):
+		tilemap.set_cell(0, closed_door_tiles[i], 0, open_door_tiles[i])  # Replace with corresponding open tile
+	# Optionally, disable collision for the door tiles
+	tilemap.set_layer_enabled(1, false)  # Adjust the layer index as needed
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group(\"player\"):  # Ensure the player has the \"player\" group
+		print('FUCK')
+		player_near_door = true
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group(\"player\"):
+		player_near_door = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxtqj"]
+size = Vector2(143, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcfk5"]
+size = Vector2(239, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg8f7"]
+size = Vector2(60, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a63ij"]
+size = Vector2(244, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydofy"]
+size = Vector2(236, 158)
+
+[node name="Game" type="Node2D"]
+
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(128, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_0gph3")]
+z_index = 2
+position = Vector2(-55, 14)
+
+[node name="BedRoom" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(4, 15)
+tile_set = SubResource("TileSet_jid5o")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(-65544, 0, 7, -8, 0, 7, 65528, 0, 7, 65529, 0, 7, 65530, 0, 7, 65531, 0, 7, 65532, 0, 7, 65533, 0, 7, 65534, 0, 7, 65535, 0, 7, -1, 0, 7, -65537, 0, 7, -65538, 0, 7, -65539, 0, 7, -65540, 0, 7, -65541, 0, 7, -65542, 0, 7, -65543, 0, 7, -7, 0, 7, -6, 0, 7, -5, 0, 7, -4, 0, 7, -3, 0, 7, -2, 0, 7, -131080, 0, 5, -131079, 0, 5, -131078, 0, 5, -131077, 0, 5, -131076, 0, 5, -131073, 0, 5, -262152, 65536, 6, -196616, 65536, 2, -262151, 65536, 6, -196615, 65536, 2, -196614, 65536, 6, -262150, 65536, 6, -262149, 65536, 6, -196613, 65536, 6, -262148, 65536, 6, -196612, 65536, 6, -262147, 65536, 6, -262146, 65536, 6, -196609, 65536, 6, 131064, 0, 7, 131065, 0, 7, 131066, 0, 7, 131067, 0, 7, 131068, 0, 7, 131069, 0, 7, 131070, 0, 7, -262145, 65536, 6, 196601, 0, 7, 196602, 0, 7, 196603, 0, 7, 196604, 0, 7, 196605, 0, 7, 196606, 0, 7, 196607, 0, 7, 131071, 0, 7, 196600, 0, 7, -131081, 0, 5, -262153, 65536, 6, -196617, 65536, 6, -65545, 0, 7, -9, 0, 7, 65527, 0, 7, 131063, 0, 7, 196599, 0, 7, -196611, 65536, 6, -196610, 65536, 6, -131075, 393216, 1, -131074, 0, 5)
+layer_1/name = "Static"
+layer_1/tile_data = PackedInt32Array(-5, 0, 4, -3, 0, 268435460, 131069, 0, 805306372, -4, 65536, 4, 65533, 65536, 1879048196, 131068, 65536, 536870916, 65531, 65536, 1073741828, 65532, 131072, 4, 131067, 0, 1610612740, -1, 262144, 6, -65537, 262144, 5, 131064, 393216, 6, 131065, 458752, 6, 196601, 458752, 7, 196600, 327680, 7, -131081, 327680, 0, -65545, 327680, 1, -196610, 458752, 268435456, -131074, 458752, 268435457, -65538, 393216, 3)
+layer_2/name = "Interactiables"
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(-196613, 65536, 0, -131077, 65536, 1, -4, 0, 1, 131071, 262144, 1610612743, 196600, 65536, 5, -131080, 131072, 0, -65544, 131072, 1, -196611, 393216, 0)
+layer_3/name = "border1"
+layer_3/z_index = 2
+layer_3/tile_data = PackedInt32Array(196602, 0, 805306368, 196603, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, 196607, 0, 1342177280, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 6, -262145, 0, 0, -65537, 0, 1342177280, 65535, 0, 1342177280, -1, 0, 1342177280, -262151, 0, 0, -262152, 0, 0, -262153, 0, 0, 196599, 0, 805306368, 196601, 0, 805306368, 196604, 0, 805306368, -262147, 65536, 6, -262146, 65536, 6, -196611, 65536, 6, -196612, 65536, 6, -196610, 65536, 6, -131074, 65536, 6)
+layer_4/name = "border2"
+layer_4/y_sort_origin = 3
+layer_4/z_index = 5
+layer_4/tile_data = PackedInt32Array(196600, 0, 805306368, 196607, 0, 805306368, -131073, 0, 1342177280, -196609, 0, 1342177280, -262145, 0, 1342177280, 196603, 0, 805306368, 196604, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, -262153, 0, 1610612736, -196617, 0, 1610612736, 65527, 0, 1610612736, 131063, 0, 1610612736, -9, 0, 1610612736, -65545, 0, 1610612736, -131081, 0, 1610612736, 196599, 0, 1610612736, -262147, 0, 65536, -196611, 393216, 0, -262148, 0, 0, -262146, 0, 0, -131074, 458752, 268435457, -196610, 458752, 268435456)
+script = SubResource("GDScript_g67nt")
+
+[node name="Area2D" type="Area2D" parent="BedRoom"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedRoom/Area2D"]
+position = Vector2(-72.5, -8.5)
+shape = SubResource("RectangleShape2D_dxtqj")
+
+[node name="Hallway" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(131, 15)
+tile_set = SubResource("TileSet_jid5o")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(-65544, 65536, 6, -8, 0, 5, 65528, 0, 6, 65529, 0, 6, 65530, 0, 6, 65531, 0, 6, 65532, 0, 6, 65533, 0, 6, 65534, 0, 6, 65535, 0, 6, -65538, 65536, 6, -65539, 65536, 6, -65540, 65536, 6, -65541, 65536, 6, -65542, 65536, 6, -65543, 65536, 6, -7, 0, 5, -6, 0, 5, -5, 0, 5, -4, 0, 5, -3, 0, 5, -2, 0, 5, -131080, 65536, 6, -131079, 65536, 6, -131078, 65536, 6, -131077, 65536, 6, -131076, 65536, 6, -131075, 65536, 6, -131074, 65536, 6, -131073, 65536, 6, 131064, 0, 6, 131065, 0, 6, 131066, 0, 6, 131067, 0, 6, 131068, 0, 6, 131069, 0, 6, 131070, 0, 6, 131071, 0, 6, 196607, 0, 6, 196606, 0, 6, 196605, 0, 6, 196604, 0, 6, 196603, 0, 6, 196602, 0, 6, 196601, 0, 6, 196600, 0, 6, -1, 0, 5, -65537, 65536, 6, 131072, 0, 6, 65536, 0, 6, 0, 0, 6, 65537, 0, 6, 131073, 0, 6, 1, 0, 6, 65538, 0, 6, 131074, 0, 6, 2, 0, 6, 131075, 0, 6, 65539, 0, 6, 3, 0, 6, -65536, 0, 5, -131072, 65536, 6, -196608, 65536, 6, -131071, 65536, 6, -65535, 0, 5, -131070, 65536, 6, -196607, 65536, 6, -65534, 0, 5, -131069, 65536, 6, -196606, 65536, 6, -65533, 0, 5, -196605, 65536, 6, 131076, 0, 6, 65540, 0, 6, 4, 0, 6, 5, 0, 6, 65541, 0, 6, 131077, 0, 6, 131078, 0, 6, 65542, 0, 6, 6, 0, 6, -65532, 0, 5, -65531, 0, 5, -65530, 0, 5, -131068, 65536, 6, -196604, 65536, 6, -196603, 65536, 6, -131067, 65536, 6, -131066, 65536, 6, -196602, 65536, 6)
+layer_1/name = "Static"
+layer_1/tile_data = PackedInt32Array(-65536, 327680, 0, 0, 327680, 1, -65533, 327680, 0, 3, 327680, 1)
+layer_2/name = "Interactiables"
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(-7, 327680, 5, 65529, 327680, 6, -65541, 458752, 2, -65537, 327680, 268435456, -1, 0, 0, -131071, 196608, 4, -131070, 262144, 4, 65542, 262144, 1610612743, -131067, 196608, 6, -65531, 196608, 7, 131064, 262144, 1342177287)
+layer_3/name = "border1"
+layer_3/z_index = 2
+layer_3/tile_data = PackedInt32Array(196600, 0, 1610612736, 196602, 0, 805306368, 196603, 0, 805306368, 196601, 0, 805306368, -131080, 0, 0, -65544, 0, 1610612736, -8, 0, 1610612736, 65528, 0, 1610612736, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, 131076, 0, 805306368, 131077, 0, 805306368, 131078, 0, 805306368, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0)
+layer_4/name = "border2"
+layer_4/y_sort_origin = 3
+layer_4/tile_data = PackedInt32Array(196600, 0, 805306368, 196601, 0, 805306368, 196602, 0, 805306368, 196603, 0, 805306368, 196604, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, -131080, 0, 1610612736, 196607, 0, 805306368, 131072, 0, 805306368, 131073, 0, 805306368, 131074, 0, 805306368, 131075, 0, 805306368, -196605, 0, 0, 131079, 0, 1610612736, 7, 0, 1610612736, -65529, 0, 1610612736, -131065, 0, 1610612736, -196601, 0, 1610612736)
+
+[node name="Area2D" type="Area2D" parent="Hallway"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Area2D"]
+position = Vector2(-7.5, 0.5)
+shape = SubResource("RectangleShape2D_pcfk5")
+
+[node name="Closet" type="TileMap" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(-12, -81)
+tile_set = SubResource("TileSet_jid5o")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(-65538, 65536, 6, -65537, 65536, 6, -131072, 65536, 6, -131071, 65536, 6, -65535, 0, 5, -65536, 0, 5, -1, 0, 5, -2, 0, 5, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 6, 131070, 0, 1610612736, 196606, 0, 1610612736, 131071, 0, 1610612736, 196607, 0, 1610612736, 262143, 0, 0, 262141, 0, 0)
+layer_1/name = "Static"
+layer_1/tile_data = PackedInt32Array(-65537, 327680, 2, -1, 327680, 3, -131072, 393216, 2, 1, 327680, 7, -65535, 327680, 7)
+layer_2/name = "Interactiables"
+layer_2/z_index = 1
+layer_3/name = "border1"
+layer_3/tile_data = PackedInt32Array(65534, 0, 1610612736, -2, 0, 1610612736, -65538, 0, 1610612736, 1, 0, 1342177280, -65535, 0, 1342177280, -131071, 0, 1342177280)
+layer_4/name = "border2"
+layer_4/y_sort_origin = 3
+layer_4/tile_data = PackedInt32Array(-65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, 1, 0, 805306368, 0, 0, 805306368, 65535, 0, 805306368)
+
+[node name="Area2D" type="Area2D" parent="Closet"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Closet/Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_tg8f7")
+
+[node name="Blank" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(602, -244)
+tile_set = SubResource("TileSet_jid5o")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_1/name = "Static"
+layer_2/name = "Interactiables"
+layer_2/z_index = 1
+layer_3/name = "border1"
+layer_3/z_index = 2
+layer_4/name = "border2"
+layer_4/y_sort_origin = 3
+
+[node name="Area2D" type="Area2D" parent="Blank"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blank/Area2D"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_a63ij")
+
+[node name="Kitchen" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(371, 47)
+tile_set = SubResource("TileSet_jid5o")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(-262152, 65536, 6, -262151, 65536, 6, -262150, 65536, 6, -262149, 65536, 6, -262148, 65536, 6, -262147, 65536, 6, -262146, 65536, 6, -262145, 65536, 6, -327680, 65536, 6, -327679, 65536, 6, -327678, 65536, 6, -327677, 65536, 6, -327676, 65536, 6, -327675, 65536, 6, -327674, 65536, 6, -196616, 65536, 6, -196615, 65536, 6, -196614, 65536, 6, -196613, 65536, 6, -196612, 65536, 6, -196611, 65536, 6, -196610, 65536, 2, -196609, 65536, 2, -262144, 65536, 2, -262143, 65536, 2, -262142, 65536, 6, -196605, 0, 5, -196604, 0, 5, -196603, 0, 5, -196602, 0, 5, -262138, 65536, 6, -262139, 65536, 6, -262140, 65536, 6, -262141, 65536, 6, -196606, 0, 5, -196607, 0, 5, -196608, 0, 5, -131073, 0, 5, -131074, 0, 5, -131075, 0, 5, -131076, 0, 5, -131077, 0, 5, -131078, 0, 5, -131079, 0, 5, -131080, 0, 5, -65544, 0, 7, -65543, 0, 7, -65542, 0, 7, -65541, 0, 7, -65540, 0, 7, -65539, 0, 7, -65538, 0, 7, -65537, 0, 7, -131072, 0, 7, -131071, 0, 7, -131070, 0, 7, -131069, 0, 7, -131068, 0, 7, -131067, 0, 7, -65531, 0, 7, -65530, 0, 7, -131066, 0, 7, -65532, 0, 7, -65533, 0, 7, -65534, 0, 7, -65535, 0, 7, -65536, 0, 7, -1, 0, 7, -2, 0, 7, -3, 0, 7, -4, 0, 7, -5, 0, 7, -6, 0, 7, -7, 0, 7, -8, 0, 7, 65528, 0, 7, 65529, 0, 7, 65530, 0, 7, 65531, 0, 7, 65532, 0, 7, 65533, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 4, 2, 65536, 4, 3, 65536, 4, 4, 65536, 4, 5, 0, 1342177284, 6, 0, 7, 65542, 0, 6, 131078, 0, 6, 196614, 0, 6, 262150, 0, 6, 262149, 0, 6, 196613, 0, 805306372, 131077, 65536, 1342177284, 131076, 131072, 1610612740, 65540, 131072, 1610612740, 65541, 65536, 1342177284, 65539, 131072, 1610612740, 131075, 131072, 1610612740, 196611, 65536, 805306372, 262147, 0, 6, 262148, 0, 6, 196612, 65536, 805306372, 196610, 65536, 805306372, 131074, 131072, 1610612740, 65538, 131072, 1610612740, 262146, 0, 6, 262145, 0, 6, 196609, 0, 1610612740, 131073, 65536, 1610612740, 65537, 65536, 1610612740, 262144, 0, 6, 196608, 0, 6, 131072, 0, 6, 65536, 0, 6, 327679, 0, 6, 262143, 0, 6, 196607, 0, 6, 131071, 0, 6, 131070, 0, 6, 196606, 0, 6, 262142, 0, 6, 327678, 0, 6)
+layer_1/name = "Static"
+layer_1/tile_data = PackedInt32Array(65539, 393216, 4, 131075, 393216, 5, 65540, 458752, 4, 131076, 458752, 5, 131077, 196608, 5, 65541, 196608, 5, 65538, 196608, 5, -196611, 327680, 0, -262142, 327680, 0, -196606, 0, 0)
+layer_2/name = "Interactiables"
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(-196604, 196608, 0, -131068, 196608, 1, -196603, 262144, 0, -131067, 262144, 1, -131069, 327680, 4, -131070, 458752, 3, -65538, 65536, 3, -131073, 131072, 2, -65537, 131072, 3, -196608, 196608, 2, -131072, 196608, 3, -131071, 262144, 3, -65539, 327680, 536870916, -131075, 327680, 4, -131076, 327680, 4, -65540, 327680, 536870916, -8, 262144, 1342177287)
+layer_3/name = "border1"
+layer_3/z_index = 2
+layer_3/tile_data = PackedInt32Array(-65544, 0, 1610612736, -131080, 0, 1610612736, -196616, 0, 1610612736, -262152, 0, 1610612736, 262150, 0, 1342177280, 196614, 0, 1342177280, 131078, 0, 1342177280, 65542, 0, 1342177280, 6, 0, 1342177280, -65530, 0, 1342177280, -131066, 0, 1342177280, -196602, 0, 1342177280, -262138, 0, 1342177280, -327674, 0, 1342177280, 65528, 0, 1610612736, 131069, 0, 1342177280, 196605, 0, 1342177280, 262141, 0, 1342177280, 327677, 0, 1342177280)
+layer_4/name = "border2"
+layer_4/y_sort_origin = 3
+layer_4/tile_data = PackedInt32Array(327678, 0, 805306368, 327679, 0, 805306368, 262144, 0, 805306368, 262145, 0, 805306368, 262146, 0, 805306368, 262147, 0, 805306368, 262148, 0, 805306368, 262149, 0, 805306368, 262150, 0, 805306368, -327674, 0, 0, -327675, 0, 0, -327676, 0, 0, -327677, 0, 0, -327678, 0, 0, -327679, 0, 0, -327680, 0, 0, -262145, 0, 0, -262146, 0, 0, -262147, 0, 0, -262148, 0, 0, -262149, 0, 0, -262150, 0, 0, -262151, 0, 0, -262152, 0, 0, 65528, 0, 805306368, 65529, 0, 805306368, 65530, 0, 805306368, 65531, 0, 805306368, 65532, 0, 805306368, 65533, 0, 805306368)
+
+[node name="Area2D" type="Area2D" parent="Kitchen"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Area2D"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_ydofy")
+
+[node name="Node2D" parent="." instance=ExtResource("1_ylu1l")]
