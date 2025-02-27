@@ -383,7 +383,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xieqv")
 animation = &"walk_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_ekcbe")
 
