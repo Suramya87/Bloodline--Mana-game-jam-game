@@ -68,3 +68,6 @@ func _on_room_detector_area_entered(area: Area2D) -> void:
 	
 	cam.limit_bottom = cam.limit_top + size.y
 	cam.limit_right = cam.limit_left + size.x
+	
+	
+	

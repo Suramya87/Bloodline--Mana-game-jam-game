@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://l04rkdgdqb6g"]
+[gd_scene load_steps=13 format=3 uid="uid://l04rkdgdqb6g"]
 
-[ext_resource type="PackedScene" uid="uid://ku7l7i7etfhk" path="res://scenes/player.tscn" id="1_0gph3"]
+[ext_resource type="PackedScene" uid="uid://ku7l7i7etfhk" path="res://player.tscn" id="1_0gph3"]
 [ext_resource type="PackedScene" uid="uid://dm7qonw15p4s7" path="res://scenes/Dining_talk.tscn" id="1_ylu1l"]
 [ext_resource type="Texture2D" uid="uid://bw6pyhyfhablu" path="res://assets/house.png" id="2_bfydw"]
-[ext_resource type="Script" path="res://scenes/basket.gd" id="4_7psho"]
+[ext_resource type="PackedScene" uid="uid://ypffnd6ontdk" path="res://textbox.tscn" id="4_sbklm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5k5w"]
 texture = ExtResource("2_bfydw")
@@ -165,9 +165,6 @@ size = Vector2(244, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydofy"]
 size = Vector2(236, 158)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o7ph"]
-size = Vector2(14, 15)
-
 [node name="Game" type="Node2D"]
 
 [node name="walls" type="StaticBody2D" parent="."]
@@ -175,7 +172,7 @@ position = Vector2(128, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_0gph3")]
 z_index = 2
-position = Vector2(-99, -2)
+position = Vector2(-55, 14)
 
 [node name="BedRoom" type="TileMap" parent="."]
 texture_filter = 1
@@ -320,11 +317,4 @@ shape = SubResource("RectangleShape2D_ydofy")
 
 [node name="Node2D" parent="." instance=ExtResource("1_ylu1l")]
 
-[node name="Basket" type="Area2D" parent="."]
-position = Vector2(-19, -7)
-script = ExtResource("4_7psho")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
-position = Vector2(-1, -1.5)
-shape = SubResource("RectangleShape2D_4o7ph")
-debug_color = Color(0.676321, 0.349968, 0.917978, 0.42)
+[node name="TextBox" parent="." instance=ExtResource("4_sbklm")]

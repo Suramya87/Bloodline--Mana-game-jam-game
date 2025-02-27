@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bykgugbve8fl0"
-path="res://.godot/imported/joystix monospace.otf-36a9854a93b18fdf459d75e4c8ee282a.fontdata"
+uid="uid://dpek0e6iwxl8p"
+path="res://.godot/imported/m6x11.ttf-ca6c5e674a887706f7bfefdf950304c5.fontdata"
 
 [deps]
 
-source_file="res://assets/joystix monospace.otf"
-dest_files=["res://.godot/imported/joystix monospace.otf-36a9854a93b18fdf459d75e4c8ee282a.fontdata"]
+source_file="res://assets/m6x11.ttf"
+dest_files=["res://.godot/imported/m6x11.ttf-ca6c5e674a887706f7bfefdf950304c5.fontdata"]
 
 [params]
 

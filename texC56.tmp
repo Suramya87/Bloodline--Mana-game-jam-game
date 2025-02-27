@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://ypffnd6ontdk"]
+
+[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_6sqe1"]
+[ext_resource type="FontFile" uid="uid://bykgugbve8fl0" path="res://assets/joystix monospace.otf" id="1_fn0wp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kupdo"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0.585062, 0.585062, 0.585062, 0.6)
+
+[node name="TextBox" type="CanvasLayer"]
+script = ExtResource("1_6sqe1")
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.035
+anchor_bottom = 1.0
+offset_top = -207.0
+offset_right = -0.320068
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="TextBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kupdo")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_fn0wp")
+theme_override_font_sizes/font_size = 64
+text = "*
+"
+
+[node name="Text" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_fn0wp")
+theme_override_font_sizes/font_size = 64
+text = "Testing
+"
+autowrap_mode = 3
+clip_text = true
+
+[node name="End" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_fn0wp")
+theme_override_font_sizes/font_size = 64
+text = "v
+"
