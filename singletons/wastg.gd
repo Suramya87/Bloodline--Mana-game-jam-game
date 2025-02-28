@@ -11,12 +11,12 @@ var text_box_position:Vector2
 var is_dialog_active = false
 var can_advance_line = false
 
-func start_dialog(postion: Vector2, lines:Array[String]):
+func start_dialog(position: Vector2, lines:Array[String]):
 	if is_dialog_active:
 		return
 	
 	dialog_lines = lines
-	text_box_position = postion
+	text_box_position = position
 	_show_text_box()
 	
 func _show_text_box():

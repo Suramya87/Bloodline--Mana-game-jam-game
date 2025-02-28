@@ -1,9 +1,16 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
-
+var interact = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var actionable_finder: Area2D = $ActionableFinder
+
+@export var dialog_lines: Array[String] = [
+	"I will do it"
+	 ,"Tomorrow",
+	"fuck"]
+	
 func _physics_process(delta: float) -> void:
 	# Reset velocity
 	velocity = Vector2.ZERO
@@ -54,20 +61,40 @@ func update_animation(direction: Vector2) -> void:
 
 
 func _on_room_detector_area_entered(area: Area2D) -> void:
-	var collision_shape = area.get_node("CollisionShape2D")
-	var size = collision_shape.shape.extents*2
+	# Check if the Area2D is part of the "Rooms" group
+	if area.is_in_group("Rooms"):
+		var collision_shape = area.get_node("CollisionShape2D")
+		var size = collision_shape.shape.extents * 2
+		
+		var view_size = get_viewport_rect().size
+		
+		# Set up camera limits
+		var cam = $Camera2D
+		cam.limit_top = collision_shape.global_position.y - size.y / 2
+		cam.limit_left = collision_shape.global_position.x - size.x / 2
+		
+		cam.limit_bottom = cam.limit_top + size.y
+		cam.limit_right = cam.limit_left + size.x
 	
-	var view_size = get_viewport_rect().size
-	#if size.y < view_size.x:
-		#size.y = view_size.y
-	#if size.x < view_size.x:
-		#size.x = view_size.x
-	var cam = $Camera2D
-	cam.limit_top = collision_shape.global_position.y - size.y/2
-	cam.limit_left = collision_shape.global_position.x - size.x/2
 	
-	cam.limit_bottom = cam.limit_top + size.y
-	cam.limit_right = cam.limit_left + size.x
+#func _on_object_detector_area_entered(area: Area2D)->void:
+	#if area.is_in_group("Objects"):
+		#var interact = true
+		#var collision_shape = area.get_node("CollisionShape2D")
+		#if event.is_action_pressed("interact"):
+		#DialogManager.start_dialog(global_position, dialog_lines)
+		#print("fuck")
+		
+
+#func _on_object_detector_body_exited(body: Node2D) -> void:
+	#var interact = false
+	#print("shit")
 	
 	
-	
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+		print("bitchin")

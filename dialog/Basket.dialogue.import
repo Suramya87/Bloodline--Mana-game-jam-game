@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dkqhtm0t88vtf"
+path="res://.godot/imported/Basket.dialogue-49ca62c67bac7d3cfbb843d353aae83f.tres"
+
+[deps]
+
+source_file="res://dialog/Basket.dialogue"
+dest_files=["res://.godot/imported/Basket.dialogue-49ca62c67bac7d3cfbb843d353aae83f.tres"]
+
+[params]
+
+defaults=true
