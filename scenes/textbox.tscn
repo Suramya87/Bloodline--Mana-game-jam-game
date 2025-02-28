@@ -1,8 +1,71 @@
-[gd_scene load_steps=5 format=3 uid="uid://jmbofy12abov"]
+[gd_scene load_steps=5 format=3 uid="uid://b4ix7sgqoythj"]
 
-[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_d27gw"]
 [ext_resource type="Texture2D" uid="uid://dwuc5o0nh7o2i" path="res://assets/Textbox.png" id="1_oijiy"]
 [ext_resource type="FontFile" uid="uid://da4xo8n7obfkj" path="res://assets/m3x6.ttf" id="3_vvki6"]
+
+[sub_resource type="GDScript" id="GDScript_hoh4q"]
+script/source = "extends MarginContainer
+
+@onready var label = $MarginContainer/Label
+@onready var timer = $LetterDisplayTimer
+
+const MAX_WIDTH = 128
+
+
+var text = \"\"
+
+var letter_index = 0
+
+#var letter_index = 0 
+
+var letter_time = 0.03
+var space_time = 0.06
+var Punctiuation_time = 0.2
+
+signal finished_displaying()
+
+func display_text(text_to_display: String):
+	text = text_to_display
+	label.text = text_to_display
+	
+	await resized
+	custom_minimum_size.x = min(size.x, MAX_WIDTH)
+	
+	if size.x > MAX_WIDTH:
+		label.autowrap_node = TextServer.AUTOWRAP_WORD
+		await resized
+		await resized
+		custom_minimum_size.y = size.y
+	
+	global_position.x -= size.x/2
+	global_position.y -= size.y - 12
+	
+
+	
+	label.text = \"\"
+	_display_letter()
+	
+func _display_letter():
+	label.text += text[letter_index]
+	
+	letter_index +=1
+	if letter_index >= text.length():
+		finished_displaying.emit()
+		return
+	
+	match text[letter_index]:
+		\"!\", \".\",\",\",\"?\":
+			timer.start(Punctiuation_time)
+		\" \":
+			timer.start(space_time)
+		_:
+			timer.start(letter_time)
+
+
+func _on_letter_display_timer_timeout() -> void:
+	_display_letter()
+	
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euvto"]
 
@@ -15,7 +78,7 @@ offset_left = 12.0
 offset_top = 32.848
 offset_right = -28.512
 offset_bottom = 46.0
-script = ExtResource("1_d27gw")
+script = SubResource("GDScript_hoh4q")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
