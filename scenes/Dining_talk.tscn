@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm7qonw15p4s7"]
+[gd_scene load_steps=7 format=3 uid="uid://dm7qonw15p4s7"]
 
 [ext_resource type="Texture2D" uid="uid://nc4brvybf4ho" path="res://assets/parents.png" id="1_h48mn"]
 
@@ -44,9 +44,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7np"]
-size = Vector2(76, 62)
-
 [node name="Talk" type="Node2D"]
 
 [node name="mother" type="AnimatedSprite2D" parent="."]
@@ -62,9 +59,3 @@ texture_filter = 1
 position = Vector2(458, 64)
 sprite_frames = SubResource("SpriteFrames_ucbs3")
 flip_h = true
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(436, 73)
-shape = SubResource("RectangleShape2D_bi7np")

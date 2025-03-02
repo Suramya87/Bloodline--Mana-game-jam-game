@@ -1,8 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://ku7l7i7etfhk"]
+[gd_scene load_steps=46 format=3 uid="uid://ku7l7i7etfhk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qup7j"]
 [ext_resource type="Texture2D" uid="uid://don60nr5kacwr" path="res://assets/cathy and mysteryman1.png" id="2_0h06j"]
 [ext_resource type="Texture2D" uid="uid://dju5kceru48yy" path="res://assets/Olivia.png" id="2_ew28t"]
+[ext_resource type="Texture2D" uid="uid://dlgvck4lgj826" path="res://assets/npc.png" id="4_44yer"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mw8uq"]
 atlas = ExtResource("2_ew28t")
@@ -95,6 +96,14 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rx83"]
 atlas = ExtResource("2_0h06j")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s44l"]
+atlas = ExtResource("4_44yer")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2s1u"]
+atlas = ExtResource("2_0h06j")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45yyo"]
 atlas = ExtResource("2_0h06j")
@@ -301,6 +310,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0s44l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2s1u")
+}],
+"loop": false,
+"name": &"waking_up",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_45yyo")
 }, {
 "duration": 1.0,
@@ -384,7 +404,7 @@ script = ExtResource("1_qup7j")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xieqv")
-animation = &"walk_down"
+animation = &"waking_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(-0.5, 1.5)

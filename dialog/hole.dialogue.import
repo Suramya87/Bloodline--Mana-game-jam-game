@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://d3lsqj1tbfa0o"
+path="res://.godot/imported/hole.dialogue-1086cda5c5cd5b24285301c8561ad3ce.tres"
+
+[deps]
+
+source_file="res://dialog/hole.dialogue"
+dest_files=["res://.godot/imported/hole.dialogue-1086cda5c5cd5b24285301c8561ad3ce.tres"]
+
+[params]
+
+defaults=true

@@ -1,13 +1,33 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
+var dream = false
 var interact = false
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var can_move = false  # Controls whether the player can move
+var last_direction = Vector2.ZERO  # Stores the last movement direction
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $ActionableFinder
 
+func _ready() -> void:
+	#disable_movement()
+	animated_sprite.play("waking_up")
+	var actionables = actionable_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		disable_movement()
+		#print("processing")
+		actionables[0].action()
+		#dream = true
+		return
+	
 	
 func _physics_process(delta: float) -> void:
+	# If movement is disabled, stop the player
+	if  not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	# Reset velocity
 	velocity = Vector2.ZERO
 
@@ -20,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Normalize diagonal movement
 	if input_direction.length() > 0:
 		input_direction = input_direction.normalized()
+		last_direction = input_direction  # Store last movement direction
 
 	# Apply movement
 	velocity = input_direction * SPEED
@@ -45,16 +66,8 @@ func update_animation(direction: Vector2) -> void:
 			else:
 				animated_sprite.play("walk_down")  # Play down animation
 	else:
-		# Idle animation
-		if animated_sprite.animation == "walk_left":
-			animated_sprite.play("idle_left")  # Idle facing left
-		elif animated_sprite.animation == "walk_right":
-			animated_sprite.play("idle_right")  # Idle facing right
-		elif animated_sprite.animation == "walk_up":
-			animated_sprite.play("idle_up")  # Idle facing up
-		elif animated_sprite.animation == "walk_down":
-			animated_sprite.play("idle_down")  # Idle facing down
-
+		# If movement is disabled, go to the idle state based on last direction
+		set_idle_animation()
 
 func _on_room_detector_area_entered(area: Area2D) -> void:
 	# Check if the Area2D is part of the "Rooms" group
@@ -71,13 +84,39 @@ func _on_room_detector_area_entered(area: Area2D) -> void:
 		
 		cam.limit_bottom = cam.limit_top + size.y
 		cam.limit_right = cam.limit_left + size.x
-	
-	
-	
+
 func _unhandled_input(event):
+	if dream:
+		print("BITCH MOVE")
+		enable_movement()
 	if Input.is_action_just_pressed("ui_accept"):
+		dream = true
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
+			print("processing")
+			disable_movement()
 			actionables[0].action()
 			return
-		print("bitchin")
+		#enable_movement()
+		#print("bitchin")
+	#print("done")
+
+# Functions to enable/disable player movement during dialog
+func disable_movement():
+	can_move = false
+	velocity = Vector2.ZERO  # Ensure the player stops immediately
+	set_idle_animation()  # Set the correct idle animation
+
+func enable_movement():
+	can_move = true
+
+# Function to set the idle animation based on the last direction moved
+func set_idle_animation():
+	if last_direction.x < 0:
+		animated_sprite.play("idle_left")  # Idle facing left
+	elif last_direction.x > 0:
+		animated_sprite.play("idle_right")  # Idle facing right
+	elif last_direction.y < 0:
+		animated_sprite.play("idle_up")  # Idle facing up
+	elif last_direction.y > 0:
+		animated_sprite.play("idle_down")  # Idle facing down

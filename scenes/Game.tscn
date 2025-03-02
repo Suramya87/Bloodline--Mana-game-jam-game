@@ -1,10 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://l04rkdgdqb6g"]
+[gd_scene load_steps=29 format=3 uid="uid://l04rkdgdqb6g"]
 
 [ext_resource type="PackedScene" uid="uid://ku7l7i7etfhk" path="res://scenes/player.tscn" id="1_0gph3"]
 [ext_resource type="PackedScene" uid="uid://dm7qonw15p4s7" path="res://scenes/Dining_talk.tscn" id="1_ylu1l"]
 [ext_resource type="Texture2D" uid="uid://bw6pyhyfhablu" path="res://assets/house.png" id="2_bfydw"]
+[ext_resource type="Texture2D" uid="uid://bqsxpahro5qrq" path="res://assets/house1.png" id="3_yfq6o"]
 [ext_resource type="PackedScene" uid="uid://bdquvcofmrgvd" path="res://scenes/actionable.tscn" id="4_eirug"]
 [ext_resource type="Resource" uid="uid://dkqhtm0t88vtf" path="res://dialog/Basket.dialogue" id="5_707h3"]
+[ext_resource type="Resource" uid="uid://duitggwy6tutj" path="res://dialog/Dining.dialogue" id="5_ljeow"]
+[ext_resource type="Resource" uid="uid://q53vldp5futl" path="res://dialog/Frame.dialogue" id="6_qabwc"]
+[ext_resource type="Resource" uid="uid://cdporyvhq0m8p" path="res://dialog/Dream.dialogue" id="8_q1nf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5k5w"]
 texture = ExtResource("2_bfydw")
@@ -56,6 +60,7 @@ texture = ExtResource("2_bfydw")
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
 6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, -8, 8, -8, 8, 8, -8, 8)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:4/0 = 0
@@ -86,9 +91,7 @@ texture = ExtResource("2_bfydw")
 5:6/0 = 0
 5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -1, 5, -1, 5, 6, -5, 6)
 6:6/0 = 0
-6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.25, 8, 1.75, 1.875, 8, -0.5, 8, 8)
 7:6/0 = 0
-7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.5, -3.625, 1.125, -0.875, 4.625, -0.375, 8, -8, 8)
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -157,6 +160,57 @@ size = Vector2(143, 113)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcfk5"]
 size = Vector2(239, 95)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t4lx"]
+atlas = ExtResource("3_yfq6o")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h3fm"]
+atlas = ExtResource("2_bfydw")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1fqi"]
+atlas = ExtResource("3_yfq6o")
+region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fhi6"]
+atlas = ExtResource("3_yfq6o")
+region = Rect2(32, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70hkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t4lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h3fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1fqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fhi6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p7xg"]
+atlas = ExtResource("3_yfq6o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdti7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p7xg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg8f7"]
 size = Vector2(60, 46)
 
@@ -166,17 +220,26 @@ size = Vector2(244, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydofy"]
 size = Vector2(236, 158)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy5o5"]
+size = Vector2(66, 43)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj37l"]
 size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmc5u"]
+size = Vector2(20, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhp1u"]
 
 [node name="Game" type="Node2D"]
 
 [node name="walls" type="StaticBody2D" parent="."]
 position = Vector2(128, 0)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_0gph3")]
 z_index = 2
-position = Vector2(-99, -2)
+position = Vector2(-108, 39)
 
 [node name="BedRoom" type="TileMap" parent="."]
 texture_filter = 1
@@ -187,27 +250,30 @@ layer_0/name = "Background"
 layer_0/z_index = -2
 layer_0/tile_data = PackedInt32Array(-65544, 0, 7, -8, 0, 7, 65528, 0, 7, 65529, 0, 7, 65530, 0, 7, 65531, 0, 7, 65532, 0, 7, 65533, 0, 7, 65534, 0, 7, 65535, 0, 7, -1, 0, 7, -65537, 0, 7, -65538, 0, 7, -65539, 0, 7, -65540, 0, 7, -65541, 0, 7, -65542, 0, 7, -65543, 0, 7, -7, 0, 7, -6, 0, 7, -5, 0, 7, -4, 0, 7, -3, 0, 7, -2, 0, 7, -131080, 0, 5, -131079, 0, 5, -131078, 0, 5, -131077, 0, 5, -131076, 0, 5, -131073, 0, 5, -262152, 65536, 6, -196616, 65536, 2, -262151, 65536, 6, -196615, 65536, 2, -196614, 65536, 6, -262150, 65536, 6, -262149, 65536, 6, -196613, 65536, 6, -262148, 65536, 6, -196612, 65536, 6, -262147, 65536, 6, -262146, 65536, 6, -196609, 65536, 6, 131064, 0, 7, 131065, 0, 7, 131066, 0, 7, 131067, 0, 7, 131068, 0, 7, 131069, 0, 7, 131070, 0, 7, -262145, 65536, 6, 196601, 0, 7, 196602, 0, 7, 196603, 0, 7, 196604, 0, 7, 196605, 0, 7, 196606, 0, 7, 196607, 0, 7, 131071, 0, 7, 196600, 0, 7, -131081, 0, 5, -262153, 65536, 6, -196617, 65536, 6, -65545, 0, 7, -9, 0, 7, 65527, 0, 7, 131063, 0, 7, 196599, 0, 7, -196611, 65536, 6, -196610, 65536, 6, -131075, 393216, 1, -131074, 0, 5)
 layer_1/name = "Static"
-layer_1/tile_data = PackedInt32Array(-5, 0, 4, -3, 0, 268435460, 131069, 0, 805306372, -4, 65536, 4, 65533, 65536, 1879048196, 131068, 65536, 536870916, 65531, 65536, 1073741828, 65532, 131072, 4, 131067, 0, 1610612740, -1, 262144, 6, -65537, 262144, 5, 131064, 393216, 6, 131065, 458752, 6, 196601, 458752, 7, 196600, 327680, 7, -131081, 327680, 0, -65545, 327680, 1, -196610, 458752, 268435456, -131074, 458752, 268435457, -65538, 393216, 3)
+layer_1/tile_data = PackedInt32Array(-5, 0, 4, -3, 0, 268435460, 131069, 0, 805306372, -4, 65536, 4, 65533, 65536, 1879048196, 131068, 65536, 536870916, 65531, 65536, 1073741828, 65532, 131072, 4, 131067, 0, 1610612740, -1, 262144, 6, -65537, 262144, 5, 131064, 393216, 6, 131065, 458752, 6, -131081, 327680, 0, -65545, 327680, 1, -196610, 458752, 268435456, -131074, 458752, 268435457, -65538, 393216, 3)
 layer_2/name = "Interactiables"
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(-196613, 65536, 0, -131077, 65536, 1, -4, 0, 1, 131071, 262144, 1610612743, 196600, 65536, 5, -131080, 131072, 0, -65544, 131072, 1, -196611, 393216, 0)
+layer_2/tile_data = PackedInt32Array(-196613, 65536, 0, -131077, 65536, 1, -4, 0, 1, 131071, 262144, 1610612743, -131080, 131072, 0, -65544, 131072, 1, -196611, 393216, 0)
 layer_3/name = "border1"
 layer_3/z_index = 2
-layer_3/tile_data = PackedInt32Array(196602, 0, 805306368, 196603, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, 196607, 0, 1342177280, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 6, -262145, 0, 0, -65537, 0, 1342177280, 65535, 0, 1342177280, -1, 0, 1342177280, -262151, 0, 0, -262152, 0, 0, -262153, 0, 0, 196599, 0, 805306368, 196601, 0, 805306368, 196604, 0, 805306368, -262147, 65536, 6, -262146, 65536, 6, -196611, 65536, 6, -196612, 65536, 6, -196610, 65536, 6, -131074, 65536, 6)
+layer_3/tile_data = PackedInt32Array(196602, 0, 805306368, 196603, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, 196607, 0, 1342177280, -262150, 0, 0, -262149, 0, 0, -262148, 65536, 6, -262145, 0, 0, -65537, 0, 1342177280, 65535, 0, 1342177280, -1, 0, 1342177280, -262151, 0, 0, -262152, 0, 0, -262153, 0, 0, 196599, 0, 805306368, 196601, 458752, 7, 196604, 0, 805306368, -262147, 65536, 6, -262146, 65536, 6, -196611, 65536, 6, -196612, 65536, 6, -196610, 65536, 6, -131074, 65536, 6, 196600, 393216, 7)
 layer_4/name = "border2"
 layer_4/y_sort_origin = 3
 layer_4/z_index = 5
-layer_4/tile_data = PackedInt32Array(196600, 0, 805306368, 196607, 0, 805306368, -131073, 0, 1342177280, -196609, 0, 1342177280, -262145, 0, 1342177280, 196603, 0, 805306368, 196604, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, -262153, 0, 1610612736, -196617, 0, 1610612736, 65527, 0, 1610612736, 131063, 0, 1610612736, -9, 0, 1610612736, -65545, 0, 1610612736, -131081, 0, 1610612736, 196599, 0, 1610612736, -262147, 0, 65536, -196611, 393216, 0, -262148, 0, 0, -262146, 0, 0, -131074, 458752, 268435457, -196610, 458752, 268435456)
+layer_4/tile_data = PackedInt32Array(196600, 0, 805306368, 196607, 0, 805306368, -131073, 0, 1342177280, -196609, 0, 1342177280, -262145, 0, 1342177280, 196603, 0, 805306368, 196604, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, -262153, 0, 1610612736, -196617, 0, 1610612736, 65527, 0, 1610612736, 131063, 0, 1610612736, -9, 0, 1610612736, -65545, 0, 1610612736, -131081, 0, 1610612736, 196599, 0, 1610612736, -262147, 0, 65536, -196611, 393216, 0, -262148, 0, 0, -262146, 0, 0, -131074, 458752, 268435457, -196610, 458752, 268435456, 196601, 0, 805306368)
 script = SubResource("GDScript_g67nt")
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="BedRoom" groups=["Rooms"]]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BedRoom/Area2D"]
 position = Vector2(-72.5, -8.5)
 shape = SubResource("RectangleShape2D_dxtqj")
+metadata/_edit_lock_ = true
 
 [node name="Hallway" type="TileMap" parent="."]
 texture_filter = 1
@@ -228,15 +294,29 @@ layer_3/tile_data = PackedInt32Array(196600, 0, 1610612736, 196602, 0, 805306368
 layer_4/name = "border2"
 layer_4/y_sort_origin = 3
 layer_4/tile_data = PackedInt32Array(196600, 0, 805306368, 196601, 0, 805306368, 196602, 0, 805306368, 196603, 0, 805306368, 196604, 0, 805306368, 196605, 0, 805306368, 196606, 0, 805306368, -131080, 0, 1610612736, 196607, 0, 805306368, 131072, 0, 805306368, 131073, 0, 805306368, 131074, 0, 805306368, 131075, 0, 805306368, -196605, 0, 0, 131079, 0, 1610612736, 7, 0, 1610612736, -65529, 0, 1610612736, -131065, 0, 1610612736, -196601, 0, 1610612736)
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="Hallway" groups=["Rooms"]]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallway/Area2D"]
 position = Vector2(-7.5, 0.5)
 shape = SubResource("RectangleShape2D_pcfk5")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-5, -73)
+sprite_frames = SubResource("SpriteFrames_70hkx")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 14)
+sprite_frames = SubResource("SpriteFrames_kdti7")
+
+[node name="Actionable" parent="AnimatedSprite2D" instance=ExtResource("4_eirug")]
 
 [node name="Closet" type="TileMap" parent="."]
 z_index = -1
@@ -256,15 +336,18 @@ layer_3/tile_data = PackedInt32Array(65534, 0, 1610612736, -2, 0, 1610612736, -6
 layer_4/name = "border2"
 layer_4/y_sort_origin = 3
 layer_4/tile_data = PackedInt32Array(-65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, 1, 0, 805306368, 0, 0, 805306368, 65535, 0, 805306368)
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="Closet" groups=["Rooms"]]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Closet/Area2D"]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_tg8f7")
+metadata/_edit_lock_ = true
 
 [node name="Blank" type="TileMap" parent="."]
 texture_filter = 1
@@ -309,23 +392,57 @@ layer_3/tile_data = PackedInt32Array(-65544, 0, 1610612736, -131080, 0, 16106127
 layer_4/name = "border2"
 layer_4/y_sort_origin = 3
 layer_4/tile_data = PackedInt32Array(327678, 0, 805306368, 327679, 0, 805306368, 262144, 0, 805306368, 262145, 0, 805306368, 262146, 0, 805306368, 262147, 0, 805306368, 262148, 0, 805306368, 262149, 0, 805306368, 262150, 0, 805306368, -327674, 0, 0, -327675, 0, 0, -327676, 0, 0, -327677, 0, 0, -327678, 0, 0, -327679, 0, 0, -327680, 0, 0, -262145, 0, 0, -262146, 0, 0, -262147, 0, 0, -262148, 0, 0, -262149, 0, 0, -262150, 0, 0, -262151, 0, 0, -262152, 0, 0, 65528, 0, 805306368, 65529, 0, 805306368, 65530, 0, 805306368, 65531, 0, 805306368, 65532, 0, 805306368, 65533, 0, 805306368)
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="Kitchen" groups=["Rooms"]]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Area2D"]
 position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_ydofy")
+metadata/_edit_lock_ = true
 
-[node name="Node2D" parent="." instance=ExtResource("1_ylu1l")]
+[node name="Chat" parent="." instance=ExtResource("1_ylu1l")]
+
+[node name="chat" parent="." instance=ExtResource("4_eirug")]
+dialogue_resource = ExtResource("5_ljeow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat"]
+position = Vector2(436, 70.5)
+shape = SubResource("RectangleShape2D_dy5o5")
+debug_color = Color(0.371475, 0.193895, 0.231388, 0.42)
 
 [node name="basket" parent="." instance=ExtResource("4_eirug")]
 position = Vector2(-19, -7)
 dialogue_resource = ExtResource("5_707h3")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="basket"]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_fj37l")
 debug_color = Color(0.936958, 0.250034, 0.0608538, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Frame" parent="." instance=ExtResource("4_eirug")]
+position = Vector2(59, -7)
+dialogue_resource = ExtResource("6_qabwc")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_wmc5u")
+debug_color = Color(0.775594, 0.340977, 0.715261, 0.42)
+
+[node name="dream" parent="." instance=ExtResource("4_eirug")]
+position = Vector2(-110, 39)
+dialogue_resource = ExtResource("8_q1nf8")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dream"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_lhp1u")
+debug_color = Color(0.618656, 0.53479, 0.0297848, 0.42)
+metadata/_edit_lock_ = true

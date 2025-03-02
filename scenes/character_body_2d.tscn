@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=3 uid="uid://culw2cjqmyh60"]
+
+[ext_resource type="Texture2D" uid="uid://don60nr5kacwr" path="res://assets/cathy and mysteryman1.png" id="1_a4i68"]
+[ext_resource type="Shader" path="res://scenes/dream.gdshader" id="2_4mv5y"]
+
+[sub_resource type="Animation" id="Animation_oqfxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sluo6"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 0), Vector2(-100, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oapix"]
+_data = {
+"RESET": SubResource("Animation_oqfxk"),
+"new_animation": SubResource("Animation_sluo6")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvv6n"]
+atlas = ExtResource("1_a4i68")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8rp2"]
+atlas = ExtResource("1_a4i68")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4s8o"]
+atlas = ExtResource("1_a4i68")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3r6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvv6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8rp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvv6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4s8o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sqmv2"]
+shader = ExtResource("2_4mv5y")
+shader_parameter/outerRadius = 1.0
+shader_parameter/MainAlpha = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgeqb"]
+size = Vector2(20, 26)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(1000, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_oapix")
+}
+autoplay = "new_animation"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, 46)
+sprite_frames = SubResource("SpriteFrames_g3r6p")
+autoplay = "default"
+frame_progress = 0.116432
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_sqmv2")
+offset_left = -116.0
+offset_top = -66.0
+offset_right = 115.0
+offset_bottom = 67.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 46)
+shape = SubResource("RectangleShape2D_jgeqb")

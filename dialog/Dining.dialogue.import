@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://duitggwy6tutj"
+path="res://.godot/imported/Dining.dialogue-9ec81986bd562fba8dc3d15f40d89b9d.tres"
+
+[deps]
+
+source_file="res://dialog/Dining.dialogue"
+dest_files=["res://.godot/imported/Dining.dialogue-9ec81986bd562fba8dc3d15f40d89b9d.tres"]
+
+[params]
+
+defaults=true
