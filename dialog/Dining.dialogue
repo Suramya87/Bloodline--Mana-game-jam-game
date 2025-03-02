@@ -1,8 +1,45 @@
 ~ start
-Dad: So how is our Daugther doing these days.
-Cathy: I doing well 
-#Make some options here 
-#filler text
-Mom: well its all done now sorry to to keep you waiting darling.
+if  State.dinner_talk == true:
+	Cathy: I am here.
+	Dad: Hello dear.
+	Dad: So how is our Daugther doing these days.
+	Cathy: I doing well. Its just I have be..... tired I guess....
+	Mom: Yea... what was that scream about earlier?
+	Cathy: Yea .... about that. It was a weird nightmare wher--
+	set State.overlay_state = "fully_black"
+	......... *DING
+	Mom: oh the ovens done lets eat first
+	Cathy: Ok!!
+	*Everyone starts eating
+	Cathy: (Should I still bring it up?)
+#	set State.overlay_state = "partially_black"
+	- Explain
+		set State.overlay_state = "partially_black"
+		Cathy: heyy so earlier
+		Dad: Ya hun? 
+		Cathy: So I had a nightmare where I walking in the street. And a man pointed a gun at me.
+		Dad: oh .... (looks uncomfortable)
+		Mom: Oh dear... I am sorry that happened to you...
+		Mom: But don't worry Mom and Dad will always be there for you. Isn't that right dear?
+		Dad: (caught off guard) uhuhh Yeayea of course.
+		Dad: Dear just promise me you will never go outside when its dark.
+		Cathy: oh yea don't worry I dont like the dark, I can't even get myself to go downstairs even if I wanted to.
+		Mom: You don't need to hun and we hope you nev--
+		Dad: *coughs* Honey we need to get going now we will be late.
+		Mom: Oh right yea haha. Would you like anything else hun?
+		- No I am ok
+			Dad: then lets get going
+			Mom: Good night hun see you tommorrow
+	- let it be
+		set State.overlay_state = "partially_black"
+		Dad: well we should get going now, or else we will be late
+		Cathy: Yup gotta save more lives
+		Dad: uhh--
+		Mom: Exactly. Now lets get going.
+	set State.overlay_state = "fully_black"
+	You wave them good by as you clean up.......
+	set State.dinner_talk = false
+set State.overlay_state = "partially_black"
 set State.hole_status = "ready"
+Cathy: I should go to bed now
 => END

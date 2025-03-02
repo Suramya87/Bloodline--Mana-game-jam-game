@@ -5,8 +5,11 @@ if State.dream_status == "going":
 	Cathy: HhhhhAH—!!, What was that
 	Cathy: That was really weird, it felt so real. 
 	Mother(from the kitchen): You ok hun?
+	set State.overlay_state = "partially_black"
+	set State.bg_state = true
 	Cathy: (oh right). Yeaaa I am ok
 	Mother(from the kitchen): OK dear come get dinner soon its almost done.
+	set State.overlay_state = "blank"
 	Cathy: Yeaaaaa I will.
 	Cathy: I should get going.
 	set State.dream_status = "Done"

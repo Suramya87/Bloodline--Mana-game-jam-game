@@ -2,7 +2,7 @@
 if State.hole_status == "open"
 	Cathy: Oh .....
 	Cathy: Oh my god. Is that blood???
-
+	set State.bg_state = false
 	???: *Heavy breathing* ok......
 	???: ok 
 

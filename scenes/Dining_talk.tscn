@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm7qonw15p4s7"]
+[gd_scene load_steps=8 format=3 uid="uid://dm7qonw15p4s7"]
 
+[ext_resource type="Script" path="res://scripts/dining_talk.gd" id="1_3m6ds"]
 [ext_resource type="Texture2D" uid="uid://nc4brvybf4ho" path="res://assets/parents.png" id="1_h48mn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnirm"]
@@ -45,6 +46,7 @@ animations = [{
 }]
 
 [node name="Talk" type="Node2D"]
+script = ExtResource("1_3m6ds")
 
 [node name="mother" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

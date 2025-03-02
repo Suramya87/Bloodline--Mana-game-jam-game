@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 State="*res://scripts/state.gd"
+OL_color="*res://scenes/color_rect.gd"
 
 [editor_plugins]
 
@@ -68,3 +69,8 @@ locale/translations_pot_files=PackedStringArray("res://dialog/Basket.dialogue", 
 [layer_names]
 
 2d_physics/layer_5="Actionables"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

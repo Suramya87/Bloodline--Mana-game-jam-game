@@ -2,14 +2,22 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 var dream = false
+var is_audio_playing = false 
 var interact = false
 var can_move = false  # Controls whether the player can move
 var last_direction = Vector2.ZERO  # Stores the last movement direction
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $ActionableFinder
+@onready var BG_player =  $AudioStreamPlayer
 
 func _ready() -> void:
+	var BG = preload("res://assets/Sounds/Bgm.mp3")
+	BG_player.stream = BG
+	#BG_player.loop = true
+	OL_color.set_transparency(0.0)
+	OL_color.change_color(Color(255, 0, 0))
+	#OL_color.fade_to(Color(0, 0, 1, 0), 1.0)
 	#disable_movement()
 	animated_sprite.play("waking_up")
 	var actionables = actionable_finder.get_overlapping_areas()
@@ -20,8 +28,10 @@ func _ready() -> void:
 		#dream = true
 		return
 	
-	
+		
 func _physics_process(delta: float) -> void:
+	OL_color.set_transparency(0.0)
+	OL_color.change_color(Color(255, 0, 0))
 	# If movement is disabled, stop the player
 	if  not can_move:
 		velocity = Vector2.ZERO
@@ -119,3 +129,11 @@ func set_idle_animation():
 		animated_sprite.play("idle_up")  # Idle facing up
 	elif last_direction.y > 0:
 		animated_sprite.play("idle_down")  # Idle facing down
+		
+func _process(delta):
+	if State.bg_state != is_audio_playing:
+		is_audio_playing = State.bg_state  
+		if State.bg_state:
+			BG_player.play()
+		else:
+			BG_player.stop()

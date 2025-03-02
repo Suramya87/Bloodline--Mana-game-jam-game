@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://dp5jpuwb7rbti"]
+[gd_scene load_steps=27 format=4 uid="uid://dp5jpuwb7rbti"]
 
 [ext_resource type="Texture2D" uid="uid://cfftv252vbsdr" path="res://assets/kidnap.png" id="1_1a0p5"]
 [ext_resource type="Texture2D" uid="uid://don60nr5kacwr" path="res://assets/cathy and mysteryman1.png" id="2_p1mma"]
 [ext_resource type="Shader" path="res://scenes/dream.gdshader" id="3_03atg"]
 [ext_resource type="Script" path="res://scripts/dream.gd" id="3_dq4eh"]
+[ext_resource type="AudioStream" uid="uid://bdh516j3frwxv" path="res://assets/Sounds/Dream_Bgm.mp3" id="4_2j3um"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xr0mg"]
 texture = ExtResource("1_1a0p5")
@@ -289,19 +290,31 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../The man/AnimatedSprite2D:animation")
+tracks/10/path = NodePath("AudioStreamPlayer:stream")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"default"]
+"values": [ExtResource("4_2j3um")]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_a00vg"]
 resource_name = "Walk"
-length = 6.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -309,7 +322,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333, 4.8),
+"times": PackedFloat32Array(-0.0333333, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(50, 0), Vector2(-100, 0)]
@@ -321,7 +334,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4.63333),
+"times": PackedFloat32Array(5.83333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
@@ -333,7 +346,7 @@ tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(4.46667, 4.8),
+"times": PackedFloat32Array(4.46667, 6.13333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -345,7 +358,7 @@ tracks/3/path = NodePath("AnimatedSprite2D:speed_scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0666667, 4.7297),
+"times": PackedFloat32Array(0.0666667, 5.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1.0, 0.0]
@@ -369,7 +382,7 @@ tracks/5/path = NodePath("../Van/AnimatedSprite2D:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4.3),
+"times": PackedFloat32Array(5.3),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -381,7 +394,7 @@ tracks/6/path = NodePath("../The man:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0666667, 4.36667),
+"times": PackedFloat32Array(0.0666667, 5.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -393,7 +406,7 @@ tracks/7/path = NodePath("../The man/AnimatedSprite2D:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0999999, 4.43333),
+"times": PackedFloat32Array(0.0999999, 5.53333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -405,7 +418,7 @@ tracks/8/path = NodePath("../The man/AnimatedSprite2D:speed_scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0666667, 4.46667),
+"times": PackedFloat32Array(0.0666667, 5.56667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0.0, 1.0]
@@ -425,14 +438,26 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../The man/AnimatedSprite2D:animation")
+tracks/10/path = NodePath("AudioStreamPlayer:stream")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(-0.0333333),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"default"]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30gep"]
@@ -515,6 +540,10 @@ autoplay = "default"
 [node name="Olivia" type="CharacterBody2D" parent="."]
 position = Vector2(50, 0)
 rotation = 6.28319
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Olivia"]
+stream = ExtResource("4_2j3um")
+bus = &"BG"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Olivia"]
 libraries = {

@@ -1,14 +1,23 @@
 ~ start
 if State.hole_status != "dead"
-	Cathy: Well sleepy time
+	Cathy: Welp sleepy time
 	set State.hole_status = "open"
+	set State.overlay_state = "fully_black"
 if State.hole_status == "open"
+	....................
+	CRACK.....
 	Cathy: What is that sound??
-	Cathy: its coming from the closet again, but its alot louder than I remember.
+	Cathy: its coming from the closet. I have been hearing recently but
+	Cathy: It is alot louder.
+	set State.overlay_state = "partially_black"
 if State.hole_status == "dead"
 	Cathy: I need to get myself together
 	Cathy: I don't understand, Why was there a person down there.
 	Cathy: Where did they come from??
 	Cathy: Are my parents? not doctors?
-	Cathy: I must know whats going on, why would they do this?
+	Cathy: I must know whats going on.
+	set State.overlay_state = "fully_black"
+	Cathy: why would they do this?
+	The End ..........
+	For now. Thanks for playing
 => END
