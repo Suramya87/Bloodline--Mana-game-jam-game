@@ -1,0 +1,14 @@
+~ start
+if State.hole_status != "dead"
+	Cathy: Well sleepy time
+	set State.hole_status = "open"
+if State.hole_status == "open"
+	Cathy: What is that sound??
+	Cathy: its coming from the closet again, but its alot louder than I remember.
+if State.hole_status == "dead"
+	Cathy: I need to get myself together
+	Cathy: I don't understand, Why was there a person down there.
+	Cathy: Where did they come from??
+	Cathy: Are my parents? not doctors?
+	Cathy: I must know whats going on, why would they do this?
+=> END

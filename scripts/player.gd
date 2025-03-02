@@ -87,7 +87,6 @@ func _on_room_detector_area_entered(area: Area2D) -> void:
 
 func _unhandled_input(event):
 	if dream:
-		print("BITCH MOVE")
 		enable_movement()
 	if Input.is_action_just_pressed("ui_accept"):
 		dream = true

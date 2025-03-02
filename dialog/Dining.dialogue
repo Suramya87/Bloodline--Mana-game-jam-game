@@ -4,4 +4,5 @@ Cathy: I doing well
 #Make some options here 
 #filler text
 Mom: well its all done now sorry to to keep you waiting darling.
+set State.hole_status = "ready"
 => END

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://7veo2csg6u1p"
+path="res://.godot/imported/Bedtime.dialogue-a58013bab297449776ca4b054e804b0d.tres"
+
+[deps]
+
+source_file="res://dialog/Bedtime.dialogue"
+dest_files=["res://.godot/imported/Bedtime.dialogue-a58013bab297449776ca4b054e804b0d.tres"]
+
+[params]
+
+defaults=true
